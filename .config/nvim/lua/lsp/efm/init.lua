@@ -7,20 +7,29 @@ local on_attach = function(client)
     end
 end
 
-
+local home = os.getenv "HOME"
+local efm_log = "/tmp/efm.log"
 local black = require "lsp/efm/black"
 local isort = require "lsp/efm/isort"
 local flake8 = require "lsp/efm/flake8"
 local mypy = require "lsp/efm/mypy"
+local stylua = require "lsp/efm/stylua"
+local efm_config = home .. "/.config/efm-langserver/config.yaml"
 
-require "lspconfig".efm.setup {
+require("lspconfig").efm.setup {
+    cmd = { "efm-langserver", "-c", efm_config, "-logfile", efm_log },
     on_attach = on_attach,
-    init_options = {documentFormatting = true},
+    init_options = { documentFormatting = true },
+    filetype = {
+        "python",
+        "lua",
+    },
     root_dir = vim.loop.cwd,
     settings = {
-        rootMarkers = {".git/"},
+        rootMarkers = { ".git/" },
         languages = {
-            python = {black, isort, flake8, mypy}
-        }
-    }
+            python = { black, isort, flake8, mypy },
+            lua = { stylua },
+        },
+    },
 }
