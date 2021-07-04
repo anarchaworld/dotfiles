@@ -1,0 +1,6 @@
+font=FiraCode 13
+history=0
+max-history=10
+default-timeout=5000
+border-color=#82DF83EE
+border-radius=10
