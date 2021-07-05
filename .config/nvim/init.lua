@@ -47,6 +47,7 @@ augroup toggle_relative_number
     autocmd InsertLeave * :setlocal relativenumber
 augroup END]]
 cmd [[autocmd BufWritePre * :%s/\s\+$//e]] -- remove trailing whitespaces automatically
+cmd [[autocmd FileType lua set formatprg=stylua\ -\ --config-path\ ~/.config/stylua.toml]]
 
 ------------------------ PLUGINS -----------------------
 require "plugins"
