@@ -19,12 +19,12 @@ local efm_config = home .. "/.config/efm-langserver/config.yaml"
 require("lspconfig").efm.setup {
     cmd = { "efm-langserver", "-c", efm_config, "-logfile", efm_log },
     on_attach = on_attach,
+    root_dir = vim.loop.cwd,
     init_options = { documentFormatting = true },
     filetype = {
         "python",
         "lua",
     },
-    root_dir = vim.loop.cwd,
     settings = {
         rootMarkers = { ".git/" },
         languages = {

@@ -56,10 +56,6 @@ g.mapleader = "," -- set leader to ,
 
 -- compe
 local compe_opts = { expr = true, noremap = true, silent = true }
-map("i", "<Tab>", "v:lua.tab_complete()", { expr = true })
-map("s", "<Tab>", "v:lua.tab_complete()", { expr = true })
-map("i", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
-map("s", "<S-Tab>", "v:lua.s_tab_complete()", { expr = true })
 map("i", "<C-Space>", "compe#complete()", compe_opts)
 map("i", "<CR>", 'compe#confirm("<CR>")', compe_opts)
 map("i", "<C-e>", 'compe#close("<C-e>")', compe_opts)
