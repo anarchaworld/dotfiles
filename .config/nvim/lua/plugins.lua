@@ -218,4 +218,6 @@ require("packer").startup(function()
         end,
     }
     use "lukas-reineke/indent-blankline.nvim"
+    -- Debugging
+    use { "michaelb/sniprun", run = "bash ./install.sh" }
 end)

@@ -66,31 +66,29 @@ map("i", "<C-d>", 'compe#scroll({"delta": -4})', compe_opts)
 -- lspsaga
 local saga_opts = { noremap = true, silent = true }
 local bmap = vim.api.nvim_buf_set_keymap
-bmap(0, "n", "gh", ":Lspsaga lsp_finder<CR>", saga_opts)
-bmap(0, "n", "<leader>ca", ":Lspsaga code_action<CR>", saga_opts)
-bmap(0, "v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", saga_opts)
-bmap(0, "n", "K", ":Lspsaga hover_doc<CR>", saga_opts)
-bmap(
-    0,
+map("n", "gh", ":Lspsaga lsp_finder<CR>", saga_opts)
+map("n", "<leader>ca", ":Lspsaga code_action<CR>", saga_opts)
+map("v", "<leader>ca", ":<C-U>Lspsaga range_code_action<CR>", saga_opts)
+map("n", "K", ":Lspsaga hover_doc<CR>", saga_opts)
+map(
     "n",
     "<C-f>",
     '<cmd>lua require("lspsaga.action").smart_scroll_with_sage(1)<CR>',
     saga_opts
 )
-bmap(
-    0,
+map(
     "n",
     "<C-b>",
     '<cmd>lua require("lspsaga.action").smart_scroll_with_sage(-1)<CR>',
     saga_opts
 )
-bmap(0, "n", "gs", ":Lspsaga signature_help<CR>", saga_opts)
-bmap(0, "n", "gr", ":Lspsaga rename<CR>", saga_opts)
-bmap(0, "n", "gd", ":Lspsaga preview_definition<CR>", saga_opts)
-bmap(0, "n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", saga_opts)
-bmap(0, "n", "[e", ":Lspsaga diagnostic_jump_next<CR>", saga_opts)
-bmap(0, "n", "]e", ":Lspsaga diagnostic_jump_prev<CR>", saga_opts)
-bmap(0, "n", "gt", ":update | :Lspsaga open_floaterm<CR>", saga_opts)
+map("n", "gs", ":Lspsaga signature_help<CR>", saga_opts)
+map("n", "gr", ":Lspsaga rename<CR>", saga_opts)
+map("n", "gd", ":Lspsaga preview_definition<CR>", saga_opts)
+map("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", saga_opts)
+map("n", "[e", ":Lspsaga diagnostic_jump_next<CR>", saga_opts)
+map("n", "]e", ":Lspsaga diagnostic_jump_prev<CR>", saga_opts)
+map("n", "gt", ":update | :Lspsaga open_floaterm<CR>", saga_opts)
 map("t", "gc", "<C-\\><C-n>:Lspsaga close_floaterm<CR>", saga_opts)
 
 -- tree (file explorer)
@@ -126,8 +124,8 @@ map("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", trouble_opts)
 
 -- barbar
 local bar_opts = { noremap = true, silent = true }
-map("n", "<C-h>", ":BufferPrevious<CR>", bar_opts)
-map("n", "<C-l>", ":BufferNext<CR>", bar_opts)
+map("n", "<C-h>", ":Update | :BufferPrevious<CR>", bar_opts)
+map("n", "<C-l>", ":Update | :BufferNext<CR>", bar_opts)
 map("n", "<A-,>", ":BufferMovePrevious<CR>", bar_opts)
 map("n", "<A-.>", ":BufferMoveNext<CR>", bar_opts)
 map("n", "<C-_>", ":BufferClose<CR>", bar_opts) -- <C-_> == <C-/>
