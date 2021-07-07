@@ -108,7 +108,7 @@ require("packer").startup(function()
     }
 
     -- Convenience
-    use "folke/which-key.nvim"
+    use { "folke/which-key.nvim", config = require("which-key").setup() }
     use {
         "folke/trouble.nvim",
         requires = "kyazdani42/nvim-web-devicons",

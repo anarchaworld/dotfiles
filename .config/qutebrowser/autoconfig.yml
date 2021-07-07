@@ -12,6 +12,7 @@ settings:
     global: true
   content.notifications.enabled:
     https://www.facebook.com: false
+    https://www.infoworld.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
   content.pdfjs:
