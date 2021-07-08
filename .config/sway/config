@@ -235,7 +235,8 @@ input "type:keyboard" {
 
 default_border pixel 2
 
-#client.focused #000000 #ffddf4 #000000
+#client.focused #000000 #ffddf4aa #000000
+client.focused #ffffff #df379aaa #ffffff
 
 client.unfocused	#a9a9a9 #282828 #c0c0c0
 font Fira Code SemiBold 11
