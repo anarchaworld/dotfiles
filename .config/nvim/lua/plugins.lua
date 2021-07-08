@@ -220,4 +220,8 @@ require("packer").startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     -- Debugging
     use { "michaelb/sniprun", run = "bash ./install.sh" }
+--    use {
+--        "mfussenegger/nvim-dap"
+--    --    config = function()
+--    }
 end)

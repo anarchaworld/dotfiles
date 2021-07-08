@@ -84,7 +84,7 @@ map(
 )
 map("n", "gs", ":Lspsaga signature_help<CR>", saga_opts)
 map("n", "gr", ":Lspsaga rename<CR>", saga_opts)
-map("n", "gd", ":Lspsaga preview_definition<CR>", saga_opts)
+-- map("n", "gd", ":Lspsaga preview_definition<CR>", saga_opts)
 map("n", "<leader>cd", ":Lspsaga show_line_diagnostics<CR>", saga_opts)
 map("n", "[e", ":Lspsaga diagnostic_jump_next<CR>", saga_opts)
 map("n", "]e", ":Lspsaga diagnostic_jump_prev<CR>", saga_opts)
@@ -209,6 +209,7 @@ map(
 ------------------------ MAPPINGS -----------------------
 map("i", "jj", "<Esc>")
 map("n", "<leader><leader>", ":LspRestart<CR>")
+map("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>")
 
 ------------------------ LSP -----------------------
 require "lsp"
