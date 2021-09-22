@@ -10,7 +10,12 @@ settings:
     global: white
   colors.webpage.darkmode.enabled:
     global: true
+  content.geolocation:
+    https://www.google.com: false
   content.notifications.enabled:
+    https://mail.google.com: false
+    https://storybicycles.com: false
+    https://watch-now.club: false
     https://www.facebook.com: false
     https://www.infoworld.com: false
     https://www.reddit.com: false

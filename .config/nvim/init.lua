@@ -124,8 +124,8 @@ map("n", "<leader>xr", "<cmd>Trouble lsp_references<cr>", trouble_opts)
 
 -- barbar
 local bar_opts = { noremap = true, silent = true }
-map("n", "<C-h>", ":Update | :BufferPrevious<CR>", bar_opts)
-map("n", "<C-l>", ":Update | :BufferNext<CR>", bar_opts)
+map("n", "<C-h>", ":BufferPrevious<CR>", bar_opts)
+map("n", "<C-l>", ":BufferNext<CR>", bar_opts)
 map("n", "<A-,>", ":BufferMovePrevious<CR>", bar_opts)
 map("n", "<A-.>", ":BufferMoveNext<CR>", bar_opts)
 map("n", "<C-_>", ":BufferClose<CR>", bar_opts) -- <C-_> == <C-/>

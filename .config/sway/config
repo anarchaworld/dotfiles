@@ -24,7 +24,8 @@ set $menu bemenu-run --fn 'Fira Code 14' -l 5 -p 'Launch App: ' -n
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/anarchaworld/Downloads/wallpaper.png fill
+output * bg /home/anarchaworld/Downloads/wallpaper.jpg fill
+output HDMI-A-1 scale 1.3
 #
 # Example configuration:
 #
@@ -224,6 +225,7 @@ bindsym XF86AudioMicMute	exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 bindsym XF86MonBrightnessUP	exec sudo light -A 3
 bindsym XF86MonBrightnessDown	exec sudo light -U 3
 bindsym print exec slurp | grim -g - /home/anarchaworld/Pictures/$(date +screenshot_%F-%T.png)
+# bindsym $mod+Ctrl+h output HDMI-A-1 toggle
 
 bar {
 	swaybar_command waybar
