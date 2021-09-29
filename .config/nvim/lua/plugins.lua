@@ -13,7 +13,7 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 -- Autocompile
-vim.cmd([[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]])
+vim.cmd [[autocmd BufWritePost plugins.lua source <afile> | PackerCompile]]
 
 require("packer").startup(function()
     -- Package Manager
@@ -54,53 +54,13 @@ require("packer").startup(function()
     use {
         "kyazdani42/nvim-tree.lua",
         requires = "kyazdani42/nvim-web-devicons",
-        config = function()
-            local g = vim.g
-
-            g.nvim_tree_side = "right"
-            g.nvim_tree_indent_markers = 1
-            g.nvim_tree_auto_close = 1
-            g.nvim_tree_follow = 1
-            g.nvim_tree_ignore = { "git", "node_modules", ".cache" }
-            g.nvim_tree_width = "15%"
-            g.nvim_tree_show_icons = {
-                git = 1,
-                folders = 0,
-                files = 0,
-                folder_arrows = 0,
-            }
-            g.nvim_tree_icons = {
-                default = "",
-                symlink = "",
-                git = {
-                    unstaged = "✗",
-                    staged = "✓",
-                    unmerged = "",
-                    renamed = "➜",
-                    untracked = "★",
-                    deleted = "",
-                    ignored = "◌",
-                },
-                folder = {
-                    arrow_open = "",
-                    arrow_closed = "",
-                    default = "",
-                    open = "",
-                    empty = "",
-                    empty_open = "",
-                    symlink = "",
-                    symlink_open = "",
-                },
-                lsp = {
-                    hint = "",
-                    info = "",
-                    warning = "",
-                    error = "",
-                },
-            }
-
-            vim.cmd [[highlight NvimTreeFolderIcon guibg=blue]]
-        end,
+        config = require("nvim-tree").setup {
+            disable_netrw = true,
+            view = {
+                side = "right",
+                auto_resize = true,
+            },
+        },
     }
     use {
         "nvim-telescope/telescope.nvim",
@@ -220,8 +180,8 @@ require("packer").startup(function()
     use "lukas-reineke/indent-blankline.nvim"
     -- Debugging
     use { "michaelb/sniprun", run = "bash ./install.sh" }
---    use {
---        "mfussenegger/nvim-dap"
---    --    config = function()
---    }
+    --    use {
+    --        "mfussenegger/nvim-dap"
+    --    --    config = function()
+    --    }
 end)
