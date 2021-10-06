@@ -1,1 +1,3 @@
 imap jj <Esc>
+
+:set scrolloff=4
